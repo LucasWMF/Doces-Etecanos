@@ -1,0 +1,55 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #ffffff;
+    --tertiary-color: #ffffff;
+    --quaternary-color: #ffffff;
+    --quinary-color: #ffffff;
+    --senary-color: #ffffff;
+    
+    --primary-text-color: white;
+    --secondary-text-color: black;
+
+    --light-color: white;
+    --gray-color: gray;
+    --dark-color: black;
+
+    --small-text: 1rem;
+    --medium-text: var(var(--small-text) * 1.61);
+    --large-text: var(var(--medium-text) * 1.61);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    width: 100%;
+    padding: 1rem;
+}
+
+#nav-icon {
+    font-size: 2em;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-item a {
+    color: black;
+    text-decoration: none;
+}
