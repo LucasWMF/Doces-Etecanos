@@ -1,48 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 :root {
-    --primary-color: #ffffff;
-    --secondary-color: #ffffff;
-    --tertiary-color: #ffffff;
-    --quaternary-color: #ffffff;
-    --quinary-color: #ffffff;
-    --senary-color: #ffffff;
-    
-    --primary-text-color: white;
-    --secondary-text-color: black;
+    --color-primary: #ADD9D1;
+    --color-secondary: #BF6836;
+    --color-terciary: #590202;
+    --color-quaternary: #D94A4A;
+    --color-quintenary: #F2A7A7;
+
+    --color-shadow-primary: #5F9E95;
+    --color-shadow-secondary: #7A3E1F;
+    --color-shadow-terciary: #290000;
+    --color-shadow-quaternary: #8E2F2F;
+    --color-shadow-quintenary: #C98E8E;
 
     --light-color: white;
     --gray-color: gray;
     --dark-color: black;
 
-    --small-text: 1rem;
-    --medium-text: var(var(--small-text) * 1.61);
-    --large-text: var(var(--medium-text) * 1.61);
+    --small-text: 8px;
+    --medium-text: calc(var(--small-text) * 1.61);
+    --large-text: calc(var(--medium-text) * 1.61);
+
+    --small-margin: 8px;
+    --medium-margin: calc(var(--small-margin) * 1.61);
+    --large-margin: calc(var(--medium-margin) * 1.61);
+
+    --small-padding: 8px;
+    --medium-padding: calc(var(--small-padding) * 1.61);
+    --large-padding: calc(var(--medium-padding) * 1.61);
 }
 
-* {
+html, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    color: black;
+    font-family: 'Arial', sans-serif;
+    color: var(--dark-color);
+    background: #290002;
+    /* height: 700vh; */
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    height: 10vh;
+.main-header {
+    background-color: var(--color-primary);
+    color: var(--color-secondary-1);
+    padding: var(--medium-padding);
     width: 100%;
-    padding: 1rem;
-}
-
-#nav-icon {
-    font-size: 2em;
+    position: fixed;
 }
 
 #navbar {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-icon {
+    font-size: 24px;
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
 .nav-item {
@@ -52,4 +74,9 @@ header {
 .nav-item a {
     color: black;
     text-decoration: none;
+}
+
+.nav-item.active a {
+    color: var(--dark-color);
+    border-bottom: 3px solid var(--color-quintenary);
 }
