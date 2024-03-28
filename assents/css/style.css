@@ -30,7 +30,7 @@
     --large-padding: calc(var(--medium-padding) * 1.61);
 }
 
-html, body {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -63,6 +63,7 @@ body {
 
 #nav_list {
     display: flex;
+    flex-direction: row;
     list-style: none;
     gap: 20px;
 }
