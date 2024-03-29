@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('header.css');
+@import url('home.css');
+@import url('about.css');
+@import url('menu.css');
+@import url('menukids.css');
+@import url('testimonials.css');
+@import url('footer.css');
 
 :root {
     --color-primary: #ADD9D1;
