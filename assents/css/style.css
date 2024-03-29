@@ -28,9 +28,20 @@
     --small-padding: 8px;
     --medium-padding: calc(var(--small-padding) * 1.61);
     --large-padding: calc(var(--medium-padding) * 1.61);
-
+    
     --arround-radius: 0.5rem;
     --circle-radius: 1rem;
+    
+    --small-title: 20px;
+    --medium-title: 40px;
+    --large-title: 80px;
+
+    --small-text: 12px;
+    --medium-text: 24px;
+    --large-text: 48px;
+
+    --confetti-count: 10; /* Número de confetes */
+
 }
 
 * {
@@ -57,7 +68,7 @@ body {
     position: sticky;
     height: 8vh;
     top: 0;
-    z-index: 1000;
+    /* z-index: 1000; */
     transition: box-shadow 0.3s ease;  
     box-shadow: none; 
 }
@@ -103,6 +114,13 @@ body {
 
 .nav-item {
     list-style: none;
+    transition: .35s;
+    cursor: pointer;
+}
+
+#nav_list:hover > :not(:hover) {
+    opacity: .4;
+    transform: scale(0.9);
 }
 
 .nav-item a {
@@ -115,13 +133,117 @@ body {
     border-bottom: 3px solid var(--color-quintenary);
 }
 
+#mobile_menu {
+    display: none;
+}
+
 /* Sections */
+/* Seções */
+
+/* Home section */
+/* Seção Inicial */
 
 #home {
-    background-color: greenyellow;
+    background-color: var(--color-quintenary);
     width: 100%;
     height: 92vh;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: var(--large-padding);
+    gap: 10rem;
 }
+
+.main-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin-left: var(--small-margin);
+}
+
+.home-title {
+    font-size: var(--large-title);
+}
+
+.home-text {
+    font-size: var(--medium-text);
+}
+
+.ask-here {
+    background-color: var(--color-primary);
+}
+
+.number {
+    background-color: var(--color-primary);
+}
+
+.instagram {
+    background-color: var(--color-primary);
+}
+
+.facebook {
+    background-color: var(--color-primary);
+}
+
+.maps {
+    background-color: var(--color-primary);
+}
+
+/* Animation Configs */
+/* Configurações da Animação */
+
+.home-animation{
+    width: 30%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation-cacau {
+    background: var(--color-terciary);
+    border-radius: 80% 10% 85% 20%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.confetti-container {
+    display: flex; /* Usando flexbox */
+    height: 100%;
+    width: 100%;
+    gap: 0.2rem; /* Espaçamento entre os confetes */
+    justify-content: space-between; /* Distribui os confetes igualmente */
+    align-items: center; /* Centraliza os confetes verticalmente */
+    position: relative; /* Adicionando position relative */
+}
+
+.confetti {
+    width: calc(10% - (var(--confetti-count) - 1)); /* Calculando a largura dos confetes */
+    height: auto; /* Mantém a altura original */
+    border-radius: 50%; 
+    background-color: red;
+    animation: rain-confetti 4s linear infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona um box-shadow */
+    margin: 0; /* Removendo a margem */
+}
+
+@keyframes rain-confetti {
+    0% {
+        transform: translateY(-100%) rotate(1deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(-1deg);
+    }
+}
+
+/* About Section */
+/* Seção sobre a empresa */
 
 #about {
     background-color: pink;
@@ -129,20 +251,26 @@ body {
     height: 100vh;
 }
 
+/* Menu Section */
+/* Seção do Cardápio */
+
 #menu {
     background-color: blue;
     width: 100%;
     height: 100vh;
 }
 
-#testimonials {
-    background-color: green;
+/* Testimonials Section */
+/* Seção de Avaliações */
+
+#menukids {
+    background-color: black;
     width: 100%;
     height: 100vh;
 }
 
-#location {
-    background-color: black;
+#testimonials {
+    background-color: green;
     width: 100%;
     height: 100vh;
 }

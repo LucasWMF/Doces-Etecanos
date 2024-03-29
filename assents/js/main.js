@@ -1,7 +1,9 @@
+console.log('Teste')
+
 $(document).ready(function() {
-    $('#nav-icon').on('click', function () {
-        $('#nav_list').toggleClass('active');
-        $(this).toggleClass('fa-times');
+    $('#mobile_btn').on('click', function () {
+        $('#mobile_menu').toggleClass('active');
+        $('#mobile_btn').find('i').toggleClass('fa-x');
     });
 
     const sections = $('section');
@@ -14,9 +16,9 @@ $(document).ready(function() {
         let activeSectionIndex = 0;
 
         if (scrollPosition <= 0) {
-            header.css('box-shadow', 'none'); // Remove o box-shadow quando o cabeçalho está no topo da página
+            header.css('box-shadow', 'none');
         } else {
-            header.css('box-shadow', '0px 8px 10px #ffffff'); // Aplica o box-shadow branco quando o cabeçalho está fixo
+            header.css('box-shadow', '0px 100px 100px -7px black;');
         }
 
         sections.each(function(i) {
