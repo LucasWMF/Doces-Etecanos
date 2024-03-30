@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="user-name">Nome:</label>
+        <input type="text" id="user-name" placeholder="Digite o Seu Nome" >
+<!-- required -->
+        <label for="user-email">Email:</label>
+        <input type="text" id="user-email" placeholder="Digite o seu Email" >
+<!-- required -->
+        <label for="user-password">Senha:</label>
+        <input type="password" id="user-password" placeholder="Crie uma Senha" required>
+
+        <label for="check-password">Verifique a Senha:</label>
+        <input type="password" id="check-password" placeholder="Verifique a Senha" required>
+    
+        <input type="submit" id="submit-button" onchange="checkPassword()".value>
+        <p class="registred-status"></p>
+    </form>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin: auto;
+            margin-top: 20vh;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        #submit-button {
+            margin: auto;
+            width: 50%;
+        }
+
+        p {
+            width: 100%;
+            height: 20px;
+            font-size: 50px;
+        }
+    </style>
+
+    <script src="assents/javascript/login.js"></script>
+</body>
+
+</html>

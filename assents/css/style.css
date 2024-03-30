@@ -67,3 +67,13 @@ body {
     background: white;
     /* height: 700vh; */
 }
+
+::-webkit-scrollbar {
+    background-color:transparent;
+    width: 1rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #ADD9D1;
+    border-radius: 10rem;
+}
