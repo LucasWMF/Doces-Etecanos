@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="">
+    <form id="registrationForm">
         <label for="user-name">Nome:</label>
         <input type="text" id="user-name" placeholder="Digite o Seu Nome" >
 <!-- required -->
@@ -21,8 +21,8 @@
         <label for="check-password">Verifique a Senha:</label>
         <input type="password" id="check-password" placeholder="Verifique a Senha" required>
     
-        <input type="submit" id="submit-button" onchange="checkPassword()".value>
-        <p class="registred-status"></p>
+        <button type="submit" id="submit-button">Registrar</button>
+        <p id="registred-status"></p>
     </form>
 
     <style>
@@ -56,7 +56,7 @@
         }
     </style>
 
-    <script src="assents/javascript/login.js"></script>
+    <script src="assents/javascript/main.js"></script>
 </body>
 
 </html>

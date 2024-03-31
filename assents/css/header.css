@@ -14,6 +14,14 @@
     box-shadow: 0px 8px 10px var(--color-shadow-primary); /* Adicionamos um box-shadow mais visível */
 }
 
+.group-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
 .contact-button {
     background-color: var(--color-quaternary);
     border: none;
@@ -25,6 +33,28 @@
 .contact-button:hover{
     box-shadow: 11px 9px 15px -5px var(--color-shadow-quaternary);
     transform: scale(1.01);
+}
+
+.user-profile {
+    width: 3rem;
+    height: 3rem;
+    padding: var(--small-padding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+
+}
+
+.user-profile i{
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.user-profile i:hover{
+    color: var(--color-shadow-primary);
 }
 
 #navbar {
@@ -69,6 +99,9 @@
     color: var(--dark-color);
     border-bottom: 3px solid var(--color-quintenary);
 }
+
+/* Mobile Menu */
+/* Menu para Celular */
 
 #mobile_menu {
     display: none;
