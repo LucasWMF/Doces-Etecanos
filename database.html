@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Base - Usuários</title>
+    <link rel="stylesheet" href="./assents/css/database.css">
+</head>
+<body>
+    <div id="containerTable"></div>
+    <script src="./assents/javascript/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let senhaAdmin = prompt("Digite a senha:");
+            let senhaAdminUser = '123';
+            
+            if (senhaAdmin === senhaAdminUser) {
+                dataBaseInfo(idData);
+            } else {
+                alert("Senha incorreta. Acesso negado.");
+                window.location.href = "index.html";
+            }
+        });
+        </script>
+        </body>
+</html>

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    
+* {
+    font-family: 'Comic Neue';
+    padding: 0;
+}
+    /* Estilo para a tabela */
+.table-dataBase {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para o cabeçalho da tabela */
+.table-dataBase th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+/* Estilo para as células da tabela */
+.table-dataBase td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+/* Estilo alternativo para as linhas */
+.table-dataBase tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para o título da tabela */
+.title-dataBase {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
