@@ -5,25 +5,7 @@
     margin: 0;
 }
 
-.container-doce{
-    height: 680px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 
-                         "card  card  card  card  card"
-                         "card  card  card  card  card"
-                         "card  card  card  card  card";
-    gap: 0.8rem;
-}
 
-.card{
-    border-radius: 10%;
-    height: 440px;
-    width: 320px;
-    background-color: rgb(86, 86, 216);
-    margin: 10px;
-    grid-area: card;
-}
 
 =======
 
