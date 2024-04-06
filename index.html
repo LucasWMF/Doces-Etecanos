@@ -91,36 +91,36 @@
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
                 </div>
+            </div>
+
+            <div class="social-media-buttons">
+                <div class="container-buttons">
+
+                    <a class="whatsapp" href="#">Whatsapp</a>
+
+                    <div class="icon-button">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
                 </div>
 
-                <div class="social-media-buttons">
-                    <div class="container-buttons">
+                <div class="container-buttons">
 
-                        <a class="whatsapp" href="#">Whatsapp</a>
+                    <a class="intagram" href="#">Instagram</a>
 
-                        <div class="icon-button">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
+                    <div class="icon-button">
+                        <i class="fa-brands fa-instagram"></i>
                     </div>
+                </div>
 
-                    <div class="container-buttons">
+                <div class="container-buttons">
 
-                        <a class="intagram" href="#">Instagram</a>
+                    <a class="facebook" href="#">Facebook</a>
 
-                        <div class="icon-button">
-                            <i class="fa-brands fa-instagram"></i>
-                        </div>
+                    <div class="icon-button">
+                        <i class="fa-brands fa-facebook"></i>
                     </div>
-
-                    <div class="container-buttons">
-
-                        <a class="facebook" href="#">Facebook</a>
-
-                        <div class="icon-button">
-                            <i class="fa-brands fa-facebook"></i>
-                        </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
         </main>
 
         <article class="home-animation">
@@ -137,6 +137,7 @@
     <section id="menu">
         <h2 class="section-title">Menu</h2>
         <h3 class="section-subtitle">Nossos bolos</h3>
+
 
         <div id="dishes">
             <div class="dish">
@@ -171,7 +172,7 @@
                 <!-- fim do card1 -->
 
                 <!-- card2 -->
-                <img src="./assents/image/cone_de_ninho_com_nutella-removebg-preview.png" class="dish-image" alt="">
+                <img src="./assents/image/cone_de_ninho_com_nutella-removebg-preview.png" class="image" alt="">
 
                 <h3 class="dish-title">
                     Cone de Ninho com Nuttela
@@ -186,10 +187,8 @@
                 </div>
 
                 <div class="dish-price">
-                    <h4>R$20,00</h4>
-                    <button class="btn-default">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </button>
+                    <h4>R$8,00</h4>
+                    
                 </div>
             </div>
 
@@ -200,15 +199,11 @@
                 <!-- fim do card2 -->
 
                 <!-- card3 -->
-                <img src="src/images/dish3.png" class="dish-image" alt="">
+                <img src="./assents/image/cupcake-removebg-preview.png" class="image" alt="">
 
                 <h3 class="dish-title">
-                    Lorem Ipsum
+                    Cupcake sabor 
                 </h3>
-
-                <span class="dish-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </span>
 
                 <div class="Estrelas-avaliação">
                     <i class="fa-solid fa-star"></i>
@@ -216,7 +211,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
-                    <span>(500+)</span>
+                    
                 </div>
 
                 <div class="dish-price">
@@ -260,6 +255,11 @@
                     </button>
                 </div>
                 <!-- fim do card4 -->
+
+        <div id="Doces">
+            <div id="doce">
+
+
             </div>
         </div>
     </section>
@@ -276,6 +276,48 @@
     </section>
 
     <footer class="main-footer"></footer>
+
+
+
+
+    <div class="container-modal">
+        <div class="modal-registred">
+            <h1 class="registred-title">
+
+            </h1>
+
+            <p class="registred-content">
+                <label for="user-name">Nome:</label>
+                <input type="text" id="user-name" placeholder="Digite o Seu Nome" required>
+                
+                <label for="user-email">Email:</label>
+                <input type="text" id="user-email" placeholder="Digite o seu Email" required>
+                
+                <label for="user-password">Senha:</label>
+                <input type="password" id="user-password" placeholder="Crie uma Senha" required>
+
+                <label for="check-password">Verifique a Senha:</label>
+                <input type="password" id="check-password" placeholder="Verifique a Senha" required>
+
+                <label for="agreementCheck">Concorda com os Termos de Uso?</label>
+                <div class="terms-of-use">
+                    <p class="terms-text"></p>
+                </div>
+
+                <button type="submit" id="submit-button">Registrar</button>
+            <p id="registred-status"></p>
+            </p>
+        </div>
+
+        <div class="modal-login">
+
+        </div>
+
+        <div class="modal-user">
+
+        </div>
+    </div>
+
     <script src="./assents/javascript/main.js"></script>
 </body>
 
