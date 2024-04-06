@@ -17,9 +17,6 @@ document.getElementById("registrationForm").addEventListener("submit", function 
 // Obrigado pela colaboração :D
 
 function registred(idData) {
-    let id;
-    number++;
-    
     let nameUser = document.getElementById('user-name').value;
     let emailUser = document.getElementById('user-email').value;
     let passwordUser = document.getElementById('user-password').value;
@@ -42,8 +39,10 @@ function registred(idData) {
             emailConnected = `${emailUser}`
         }
     }
-    localStorage.setItem('numberCounting', number)
     
+    let id;
+    number++;
+
     if (number > 10) {
         id = number.toString().padStart(8, '0');
     } else if (number < 10) {
@@ -56,7 +55,8 @@ function registred(idData) {
         id = number.toString().padStart(4, '0');
     }
     idData.push(id);
-
+    
+    localStorage.setItem('numberCounting', number);
     localStorage.setItem(`${idData}/registred/name`, password);
     localStorage.setItem(`${idData}/registred/email`, emailUser);
     localStorage.setItem(`${idData}/registred/password`, passwordUser);
@@ -64,11 +64,26 @@ function registred(idData) {
 }
 
 function login() {
-    // Ele irá verificar se os dados de login são iguais a de algum dos idData e reconehcer qual usuário conectou, além de definir UserConnect como true para utilizar para abrir o perfil.
+    let infoUser = document.getElementById('user-info-login').value;
+    let passwordUser = document.getElementById('user-password-login').value;
+    
+    for (let i = 0; i = idData.length; i++) {
+        let nameData = localStorage.getItem(`${idData}/registred/name`);
+        let emailData = localStorage.getItem(`${idData}/registred/email`);
+        let passwordData = localStorage.getItem(`${idData}/registred/password`);
+        
+        if ((infoUser === nameData || infoUser === emailData) && passwordUser === passwordData) {
+            connected = true;
+            alert(`o ID da conta conectada é ${IdData}`)
+        }
 }
 
 function dataBase() {
-
+    let returnData = registred();
+    let id = returnData.idData
+    for (let i = 0; i = idData.length; i++) {
+    nameUser = local.localStorage()
+    }
 }
 
 

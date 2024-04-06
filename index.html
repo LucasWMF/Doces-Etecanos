@@ -289,10 +289,10 @@
             <p class="registred-content">
                 <label for="user-name">Nome:</label>
                 <input type="text" id="user-name" placeholder="Digite o Seu Nome" required>
-                
+
                 <label for="user-email">Email:</label>
                 <input type="text" id="user-email" placeholder="Digite o seu Email" required>
-                
+
                 <label for="user-password">Senha:</label>
                 <input type="password" id="user-password" placeholder="Crie uma Senha" required>
 
@@ -300,22 +300,74 @@
                 <input type="password" id="check-password" placeholder="Verifique a Senha" required>
 
                 <label for="agreementCheck">Concorda com os Termos de Uso?</label>
-                <div class="terms-of-use">
-                    <p class="terms-text"></p>
+            <div class="terms-of-use">
+                <div class="terms-text">
+                    <h1 class="terms-title">Termos de Uso e Política de Privacidade</h1>
+                    <p class="terms-subtitle">Bem-vindo aos nossos Termos de Uso e Política de Privacidade. Ao utilizar
+                        nossos serviços, você concorda com estes termos. Por favor, leia-os com atenção.</p>
+
+                    <h2 class="terms-heading">1. Coleta de Dados</h2>
+                    <p class="terms-content">Ao utilizar nossos serviços, podemos coletar informações pessoais,
+                        incluindo seu nome e endereço de e-mail, para registro em nosso banco de dados. Esses dados
+                        serão utilizados estritamente para fornecer acesso aos nossos serviços e para facilitar a sua
+                        participação em avaliações e pesquisas.</p>
+
+                    <h2 class="terms-heading">2. Utilização dos Dados</h2>
+                    <p class="terms-content">Ao fornecer seus dados pessoais, você nos autoriza a utilizá-los para os
+                        seguintes propósitos:</p>
+                    <ul class="terms-list">
+                        <li>Facilitar o acesso aos nossos serviços</li>
+                        <li>Entrar em contato com você para fornecer informações sobre nossos serviços</li>
+                        <li>Enviar avaliações e pesquisas para a sua participação</li>
+                        <li>Melhorar a qualidade e a eficácia dos nossos serviços</li>
+                    </ul>
+
+                    <h2 class="terms-heading">3. Proteção de Dados</h2>
+                    <p class="terms-content">Comprometemo-nos a proteger a segurança e a privacidade dos seus dados
+                        pessoais. Utilizamos medidas técnicas e organizacionais adequadas para proteger seus dados
+                        contra acesso não autorizado, divulgação, alteração ou destruição.</p>
+
+                    <h2 class="terms-heading">4. Compartilhamento de Dados</h2>
+                    <p class="terms-content">Não compartilharemos seus dados pessoais com terceiros sem o seu
+                        consentimento explícito, exceto quando necessário para cumprir com obrigações legais ou
+                        regulatórias.</p>
+
+                    <h2 class="terms-heading">5. Seus Direitos</h2>
+                    <p class="terms-content">Você tem o direito de acessar, corrigir ou excluir seus dados pessoais a
+                        qualquer momento. Para exercer esses direitos ou para obter mais informações sobre o tratamento
+                        dos seus dados pessoais, entre em contato conosco por meio das informações fornecidas abaixo.
+                    </p>
+
+                    <h2 class="terms-heading">6. Alterações nos Termos</h2>
+                    <p class="terms-content">Reservamo-nos o direito de atualizar ou modificar estes Termos de Uso e
+                        Política de Privacidade a qualquer momento. Quaisquer alterações entrarão em vigor imediatamente
+                        após a publicação dos termos revisados em nosso site. É sua responsabilidade revisar
+                        periodicamente estes termos para estar ciente de quaisquer alterações.</p>
+
+                    <h2 class="terms-heading">7. Contato</h2>
+                    <p class="terms-content">Se você tiver dúvidas ou preocupações sobre estes Termos de Uso e Política
+                        de Privacidade, ou sobre o tratamento de seus dados pessoais, entre em contato conosco através
+                        do seguinte endereço de e-mail: <a
+                            href="mailto:youremail@exemplo.com">youremail@exemplo.com</a>.</p>
                 </div>
-
-                <button type="submit" id="submit-button">Registrar</button>
-            <p id="registred-status"></p>
+            </div>
             </p>
-        </div>
-
-        <div class="modal-login">
+            <input type="checkbox" id="agreementCheck" required>
 
         </div>
 
-        <div class="modal-user">
+        <button type="submit" id="submit-button">Registrar</button>
+        <p id="registred-status"></p>
+        </p>
+    </div>
 
-        </div>
+    <div class="modal-login">
+
+    </div>
+
+    <div class="modal-user">
+
+    </div>
     </div>
 
     <script src="./assents/javascript/main.js"></script>
