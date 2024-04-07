@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 150%;
 }
 
 #dishes {
@@ -48,6 +49,8 @@
 .image{
     max-width: 200px;
     max-height: 200px;
+    filter:drop-shadow(1rem 1rem 1rem black) 
+    /* Coloca uma sombra diretamente envolta da imagem se quiser usar Assinado: Lucas W */
 }
 
 

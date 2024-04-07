@@ -79,30 +79,41 @@ function login() {
         }
     }
 
-    dataBase();
+    // Colocar aqui o evento de clicar no botão de perfil.
+    // document.getElementById('user-profile').addEventListener("click", () => {
+    //     if(user-profile != adminUser) {
+    //         userProfile()
+    //     } else {
+    //         dataBase()
+    //     }
+    // });
 
+    // userProfile()
+    // function userProfile() {
+
+    // }
+
+    dataBase()
     function dataBase() {
         let returnData = registred();
         let idData = returnData.idData;
-
+    
         let tableHTML = document.getElementById('data-base');
-        tableHTML += `<table class="table-database">`
-        tableHTML += `<th class="header-row"><td>ID User</td><td>Nome do Usuário</td><td>Email do Usuário</td><td>Número de Avaliações</td></th>`
-
-
-        for (let i = 0; i = idData.length; i++) {
-            nameUser = localStorage.getItem(`${idData}/registred/name`)
-            emailUser = localStorage.getItem(`${idData}/registred/email`)
-            testimonialsUser = localStorage.getItem(`${idData}/testimonials`)
-
-            tableHTML += `<tr><td>${idData}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`
-            console.log(`<tr><td>${idData}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`);
+        tableHTML.innerHTML = `<table class="table-database">`;
+        tableHTML.innerHTML += `<tr><th>ID User</th><th>Nome do Usuário</th><th>Email do Usuário</th><th>Número de Avaliações</th></tr>`;
+    
+        for (let i = 0; i < idData.length; i++) {
+            let nameUser = localStorage.getItem(`${idData[i]}/registred/name`);
+            let emailUser = localStorage.getItem(`${idData[i]}/registred/email`);
+            let testimonialsUser = localStorage.getItem(`${idData[i]}/testimonials`);
+    
+            tableHTML.innerHTML += `<tr><td>${idData[i]}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`;
+            console.log(`<tr><td>${idData[i]}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`);
         }
-
-        tableHTML += `</table>`
+    
+        tableHTML.innerHTML += `</table>`;
     }
 }
-
 
 for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
@@ -110,7 +121,7 @@ for (let i = 0; i < localStorage.length; i++) {
     console.log(`Chave: ${key}, Valor: ${value}`);
 }
 
-
+// 
 
 // function registred() {
 
@@ -186,4 +197,4 @@ for (let i = 0; i < localStorage.length; i++) {
 
 //     tableHTML += `</table/>`;
 //     container.innerHTML = tableHTML;
-// /
+//
