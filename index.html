@@ -36,9 +36,9 @@
             <span class="group-items">
                 <button class="contact-button">Peça Aqui</button>
 
-                <a class="user-profile" id="user-access">
+                <button class="user-profile" id="user-access">
                     <i class="fa-solid fa-user"></i>
-                </a>
+                </button>
             </span>
         </nav>
 
@@ -504,7 +504,7 @@
 
 
     <div class="container-modal">
-        <div class="modal-registred">
+        <div id="modal-registred">
             <form id="registrationForm">
                 <h1 class="registred-title">Registro</h1>
                 <p class="registred-content">
@@ -588,14 +588,32 @@
             </form>
         </div>
 
-        <div class="modal-login">
+        <div id="modal-login">
+            <div class="modal-animation-container">
+                <h1>Seja Bem Vindo!!</h1>
+            </div>
+                <form id="loginForm">
+                    <label for="user-name">Nome ou Email:</label>
+                    <input class="write" type="text" id="user-name" placeholder="Digite o Seu Nome ou Email" required>
+    
+                    <label for="user-password">Senha:</label>
+                    <input class="write" type="password" id="user-password" placeholder="Digite a sua Senha" required>
+                
+                    <button type="submit" id="submit-login">Entrar</button>
+            </form>
+            </div>
         </div>
 
-        <div class="modal-user">
+        <div id="modal-user">
+            <!-- Tem que ter o input para trocar o nome, o botão para confimar -->
+            <!-- Tem que ter o input para trocar o email, o botão para confimar -->
+            <!-- Tem que um lugar para trocar a senha que é um modal a mais e o modal para voltar e afins, tem que ter a verificação toda de o nome não estiver sendo utilizado nem o email novo, ou seja um saco LEI LGPD -->
         </div>
 
         <div id="modal-database">
-            <div id="data-base"></div>
+            <div id="data-base">
+                TABELA IRÁ APARECER AQ
+            </div>
         </div>
     </div>
 

@@ -80,13 +80,45 @@ function login() {
     }
 
     // Colocar aqui o evento de clicar no botão de perfil.
-    // document.getElementById('user-profile').addEventListener("click", () => {
-    //     if(user-profile != adminUser) {
-    //         userProfile()
-    //     } else {
-    //         dataBase()
-    //     }
-    // });
+    document.getElementById('user-acess').addEventListener("click", () => {
+        abrirModal();
+    });
+
+    function abrirModal() {
+        if (connected = false) {
+            // Abrir o Modal de Login
+            const modal = document.getElementById('modal-login').style.display = "flex";
+        } else {
+            if (nameUser != adminUser) {
+                // Abrir modal do Perfil
+                const modal = document.getElementById('modal-user').style.display = "flex";
+
+            } else {
+                // abrir data base modal
+                const modal = document.getElementById('modal-database').style.display = "flex";
+            }
+        }
+    }
+
+    document.getElementById('exit-acess').addEventListener("click", () => {
+        fecharModal();
+    });
+
+    function fecharModal() {
+        if (connected = false) {
+            // Abrir o Modal de Login
+            const modal = document.getElementById('modal-login').style.display = "none";
+        } else {
+            if (nameUser != adminUser) {
+                // Abrir modal do Perfil
+                const modal = document.getElementById('modal-user').style.display = "none";
+
+            } else {
+                // abrir data base modal
+                const modal = document.getElementById('modal-database').style.display = "none";
+            }
+        }
+    }
 
     // userProfile()
     // function userProfile() {
@@ -97,20 +129,22 @@ function login() {
     function dataBase() {
         let returnData = registred();
         let idData = returnData.idData;
-    
+
         let tableHTML = document.getElementById('data-base');
         tableHTML.innerHTML = `<table class="table-database">`;
         tableHTML.innerHTML += `<tr><th>ID User</th><th>Nome do Usuário</th><th>Email do Usuário</th><th>Número de Avaliações</th></tr>`;
-    
+
         for (let i = 0; i < idData.length; i++) {
-            let nameUser = localStorage.getItem(`${idData[i]}/registred/name`);
-            let emailUser = localStorage.getItem(`${idData[i]}/registred/email`);
-            let testimonialsUser = localStorage.getItem(`${idData[i]}/testimonials`);
-    
-            tableHTML.innerHTML += `<tr><td>${idData[i]}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`;
-            console.log(`<tr><td>${idData[i]}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`);
+            let userInfo = {
+                'nameUser': localStorage.getItem(`${idData[i]}/registred/name`),
+                'emailUser': localStorage.getItem(`${idData[i]}/registred/email`),
+                'testimonialsUser': localStorage.getItem(`${idData[i]}/testimonials`)
+            };
+
+            tableHTML.innerHTML += `<tr><td>${idData[i]}</td><td>${userInfo.nameUser}</td><td>${userInfo.emailUser}</td><td>${userInfo.testimonialsUser}</td></tr>`;
+            console.log(`<tr><td>${idData[i]}</td><td>${userInfo.nameUser}</td><td>${userInfo.emailUser}</td><td>${userInfo.testimonialsUser}</td></tr>`)
         }
-    
+
         tableHTML.innerHTML += `</table>`;
     }
 }
@@ -121,7 +155,7 @@ for (let i = 0; i < localStorage.length; i++) {
     console.log(`Chave: ${key}, Valor: ${value}`);
 }
 
-// 
+//
 
 // function registred() {
 
