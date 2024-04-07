@@ -16,15 +16,16 @@ document.getElementById("registrationForm").addEventListener("submit", function 
 // localStorage.clear()
 // Obrigado pela colaboração :D
 
-function registred(idData) {
+function registred(idData, connected) {
     let nameUser = document.getElementById('user-name').value;
     let emailUser = document.getElementById('user-email').value;
     let passwordUser = document.getElementById('user-password').value;
     let checkPassword = document.getElementById('check-password').value;
-    
+
     for (let i = 0; i = idData.length; i++) {
         let nameData = localStorage.getItem(`${idData}/registred/name`);
         let emailData = localStorage.getItem(`${idData}/registred/email`);
+
         if (nameUser === nameData) {
             alert(`Esse nome já está em uso troque-o e Tente Novamente`);
         } else if (emailUser === emailData) {
@@ -39,7 +40,7 @@ function registred(idData) {
             emailConnected = `${emailUser}`
         }
     }
-    
+
     let id;
     number++;
 
@@ -55,87 +56,63 @@ function registred(idData) {
         id = number.toString().padStart(4, '0');
     }
     idData.push(id);
-    
+
     localStorage.setItem('numberCounting', number);
     localStorage.setItem(`${idData}/registred/name`, password);
     localStorage.setItem(`${idData}/registred/email`, emailUser);
     localStorage.setItem(`${idData}/registred/password`, passwordUser);
-    return { 'idData': idData, 'loginDone': connected,'userConnected': userConnected, 'emailConnected': emailConnected};
-}
+    return { 'idData': idData, 'loginDone': connected, 'userConnected': userConnected, 'emailConnected': emailConnected };
+};
 
 function login() {
     let infoUser = document.getElementById('user-info-login').value;
     let passwordUser = document.getElementById('user-password-login').value;
-    
+
     for (let i = 0; i = idData.length; i++) {
         let nameData = localStorage.getItem(`${idData}/registred/name`);
         let emailData = localStorage.getItem(`${idData}/registred/email`);
         let passwordData = localStorage.getItem(`${idData}/registred/password`);
-        
+
         if ((infoUser === nameData || infoUser === emailData) && passwordUser === passwordData) {
             connected = true;
             alert(`o ID da conta conectada é ${IdData}`)
         }
-}
+    }
 
-function dataBase() {
-    let returnData = registred();
-    let id = returnData.idData
-    for (let i = 0; i = idData.length; i++) {
-    nameUser = local.localStorage()
+    dataBase();
+
+    function dataBase() {
+        let returnData = registred();
+        let idData = returnData.idData;
+
+        let tableHTML = document.getElementById('data-base');
+        tableHTML += `<table class="table-database">`
+        tableHTML += `<th class="header-row"><td>ID User</td><td>Nome do Usuário</td><td>Email do Usuário</td><td>Número de Avaliações</td></th>`
+
+
+        for (let i = 0; i = idData.length; i++) {
+            nameUser = localStorage.getItem(`${idData}/registred/name`)
+            emailUser = localStorage.getItem(`${idData}/registred/email`)
+            testimonialsUser = localStorage.getItem(`${idData}/testimonials`)
+
+            tableHTML += `<tr><td>${idData}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`
+            console.log(`<tr><td>${idData}</td><td>${nameUser}</td><td>${emailUser}</td><td>${testimonialsUser}</td></tr>`);
+        }
+
+        tableHTML += `</table>`
     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    let value = localStorage.getItem(key);
+    console.log(`Chave: ${key}, Valor: ${value}`);
+}
 
 
 
 // function registred() {
-// for (let i = 0; i < localStorage.length; i++) {
-//     let key = localStorage.key(i);
-//     let value = localStorage.getItem(key);
-//     console.log(`Chave: ${key}, Valor: ${value}`);
-// }
 
 // let id;
 // let nameUser = document.getElementById('user-name').textContent;
@@ -209,4 +186,4 @@ function dataBase() {
 
 //     tableHTML += `</table/>`;
 //     container.innerHTML = tableHTML;
-// }
+// /
