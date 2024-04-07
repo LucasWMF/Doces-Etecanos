@@ -5,7 +5,7 @@
     position: sticky;
     height: 8vh;
     top: 0;
-    /* z-index: 1000; */
+    z-index: 1000;
     transition: box-shadow 0.3s ease;  
     box-shadow: none; 
 }
