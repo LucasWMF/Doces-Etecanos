@@ -36,10 +36,10 @@
     --small-padding: 8px;
     --medium-padding: calc(var(--small-padding) * 1.61);
     --large-padding: calc(var(--medium-padding) * 1.61);
-    
+
     --arround-radius: 0.5rem;
     --circle-radius: 1rem;
-    
+
     --small-title: 20px;
     --medium-title: 40px;
     --large-title: 80px;
@@ -48,7 +48,8 @@
     --medium-text: 24px;
     --large-text: 48px;
 
-    --confetti-count: 10; /* Número de confetes */
+    --confetti-count: 10;
+    /* Número de confetes */
 
 }
 
@@ -70,11 +71,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-    background-color:transparent;
     width: 1rem;
+    padding: .5rem;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: #ADD9D1;
     border-radius: 10rem;
 }

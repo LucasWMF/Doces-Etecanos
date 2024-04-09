@@ -1,11 +1,33 @@
+// Front End - Animações
+
+
+
+// Back End - Acesso e Avaliações
+
 let number;
 let idData = [];
 let connected = false;
 number = localStorage.getItem('numberCounting');
 
-document.getElementById("registrationForm").addEventListener("submit", function (event) {
+window.addEventListener("beforeunload", function(event) {
+    if (event.target === window) {
+        if (connected === true ) {
+            alert(`Sua conta foi reiniciada`);
+        }
+    }
+});
+
+
+document.addEventListener("submit", function (event) {
     event.preventDefault();
-    registred();
+    let loginButton = document.getElementById('submit-button-login');
+    let registrationForm = document.getElementById('registrationForm');
+
+    if (loginButton) {
+        login();
+    } else if (registrationForm) {
+        registred();
+    }
 });
 
 // SE ISSO FOR DESCOMENTADO ESTAMOS FERRADO ISSO DELETA TODOS OS DADOS POR FAVOR NÃO UTILIZAR SOMENTE PARA TESTE
@@ -22,28 +44,36 @@ function registred(idData, connected) {
     let passwordUser = document.getElementById('user-password').value;
     let checkPassword = document.getElementById('check-password').value;
 
-    for (let i = 0; i = idData.length; i++) {
-        let nameData = localStorage.getItem(`${idData}/registred/name`);
-        let emailData = localStorage.getItem(`${idData}/registred/email`);
+    let userConnected = ''; // Definindo variáveis userConnected e emailConnected no escopo da função
+    let emailConnected = '';
+
+    let nameData, emailData;
+
+    for (let i = 0; i < idData.length; i++) {
+        nameData = localStorage.getItem(`${idData[i]}/registred/name`); 
+        emailData = localStorage.getItem(`${idData[i]}/registred/email`);
 
         if (nameUser === nameData) {
             alert(`Esse nome já está em uso troque-o e Tente Novamente`);
+            return; 
         } else if (emailUser === emailData) {
             alert(`Esse email já está em uso tente logar com a sua conta ou utilize outro email`);
-        } else if (password != checkPassword) {
-            alert(`As senhas não coincidem. Tente Novamente`);
+            return; 
+        } else if (passwordUser !== checkPassword) { 
+        alert(`As senhas não coincidem. Tente Novamente`);
+        return; 
         } else {
             alert(`Registro bem Sucedido`);
             document.getElementById('registrationForm').reset();
             connected = true;
-            userConnected = `${nameUser}`
-            emailConnected = `${emailUser}`
+            userConnected = nameUser; 
+            emailConnected = emailUser;
         }
-    }
 
+    let number = parseInt(localStorage.getItem('numberCounting') || 0);
     let id;
-    number++;
 
+    number++;
     if (number > 10) {
         id = number.toString().padStart(8, '0');
     } else if (number < 10) {
@@ -55,18 +85,22 @@ function registred(idData, connected) {
     } else {
         id = number.toString().padStart(4, '0');
     }
+
     idData.push(id);
 
     localStorage.setItem('numberCounting', number);
-    localStorage.setItem(`${idData}/registred/name`, password);
-    localStorage.setItem(`${idData}/registred/email`, emailUser);
-    localStorage.setItem(`${idData}/registred/password`, passwordUser);
+    localStorage.setItem(`${id}/registred/name`, nameUser); // Corrigindo a chave do localStorage
+    localStorage.setItem(`${id}/registred/email`, emailUser);
+    localStorage.setItem(`${id}/registred/password`, passwordUser);
+
     return { 'idData': idData, 'loginDone': connected, 'userConnected': userConnected, 'emailConnected': emailConnected };
 };
 
 function login() {
-    let infoUser = document.getElementById('user-info-login').value;
-    let passwordUser = document.getElementById('user-password-login').value;
+    let registredData = registred()
+    let idData = registredData.idData
+    let infoUser = document.getElementById('email-login').value;
+    let passwordUser = document.getElementById('password-login').value;
 
     for (let i = 0; i = idData.length; i++) {
         let nameData = localStorage.getItem(`${idData}/registred/name`);
@@ -92,7 +126,6 @@ function login() {
             if (nameUser != adminUser) {
                 // Abrir modal do Perfil
                 const modal = document.getElementById('modal-user').style.display = "flex";
-
             } else {
                 // abrir data base modal
                 const modal = document.getElementById('modal-database').style.display = "flex";
@@ -147,6 +180,7 @@ function login() {
 
         tableHTML.innerHTML += `</table>`;
     }
+}
 }
 
 for (let i = 0; i < localStorage.length; i++) {
@@ -231,4 +265,4 @@ for (let i = 0; i < localStorage.length; i++) {
 
 //     tableHTML += `</table/>`;
 //     container.innerHTML = tableHTML;
-//
+// 

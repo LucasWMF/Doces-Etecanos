@@ -1,5 +1,4 @@
 .main-header {
-    background-color: var(--color-primary);
     padding: var(--large-padding) 8%;
     position: -webkit-sticky;
     position: sticky;
@@ -12,7 +11,7 @@
 
 .main-header.sticky {
     box-shadow: 0px 8px 10px var(--color-shadow-primary);
-    /* Adicionamos um box-shadow mais visível */
+    backdrop-filter: blur(2rem);
 }
 
 .group-items {

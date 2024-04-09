@@ -1,8 +1,27 @@
+/* .text3d {
+    animation: text-pop-up-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    font-size: 3em;
+}
+
+@keyframes text-pop-up-bottom {
+    0% {
+        transform: translateY(0);
+        transform-origin: 50% 50%;
+        text-shadow: none;
+    }
+
+    100% {
+        transform: translateY(50px);
+        transform-origin: 50% 50%;
+        text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+    }
+} */
+
 .container-modal {
     color: black;
-    background-color: rgba(0, 0, 0, .5);
-    height: 100vh;
-    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,93 +29,156 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
-}
-
-#modal-registred {
-    display: none;
 }
 
 /* Modal Login */
 /* Tela de Login */
 
 #modal-login {
-    width: 40%;
-    height: 80%;
-    border-radius: 3rem;
-    background-color: #ffffffb4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-bottom: 2rem;
-}
-
-.modal-animation-container {
-    width: 90%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#loginForm {
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: .5rem .5rem .5rem .1rem rgba(0, 0, 0, .5);
-    font-size: 1.5em;
-    width: 90%;
-    height: 70%;
-    background: radial-gradient(circle at center center, #7A3E1F, #BF6836), repeating-radial-gradient(circle at center center, #7A3E1F, #7A3E1F, 4px, transparent 8px, transparent 4px);
-    background-blend-mode: multiply;
-    background-size: 200% 200%; /* Estender o gradiente além dos limites do contêiner */
     position: relative;
-    background-position:center;
-    animation: backgroundCocoa 10s linear infinite;
+    height: 65%;
+    width: 25%;
+    background: transparent;
+    border: 0.2rem solid rgba(255, 255, 255, .5);
+    border-radius: 2rem;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 4rem rgba(0, 0, 0, .5);
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding: var(--medium-padding);
 }
 
-@keyframes backgroundCocoa {
-    0% {
-        background-position: 0deg; /* Início da animação */
-        background: radial-gradient(circle at center center, #7A3E1F, #BF6836), repeating-radial-gradient(circle at center center, #7A3E1F, #7A3E1F, 4px, transparent 8px, transparent 4px);
-    }
-    100% {
-        background-position: 180deg; 
-        background: radial-gradient(circle at center center, #BF6836, #7A3E1F), repeating-radial-gradient(circle at center center, #BF6836, #7A3E1F, 4px, transparent 8px, transparent 4px);
-    }
+.form-content {
+    width: 100%;
+    height: 100%;
+    padding: 4rem;
 }
 
-#loginForm::backdrop {
-    background-color: #BF6836;
-    opacity: 1;
-    background-image: radial-gradient(circle at center center, #7A3E1F, #BF6836), repeating-radial-gradient(circle at center center, #7A3E1F, #7A3E1F, 4px, transparent 8px, transparent 4px);
-    background-blend-mode: multiply;
-}
-
-#loginForm,
-label {
+.form-content h2 {
+    padding: var(--small-padding);
+    font-size: 2.5em;
     color: black;
-    margin: var(--large-margin) 0 0 0;
+    text-align: center;
 }
 
-input.write {
-    background: none;
-    border: none;
-    border-bottom: .1rem solid var(--color-terciary);
+.input-content {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    border-bottom: .15rem solid var(--color-terciary);
+    margin: 1rem 0;
 }
 
-#submit-login {
-    align-self: center;
+.input-content label {
+    position: absolute;
+    top: 100%;
+    left: 2.5%;
+    transform: translateY(-120%);
+    font-weight: 500;
+    pointer-events: none;
+    font-size: 1.2em;
+    transition: top 0.3s ease;
+}
+
+.input-content input:focus ~ label,
+.input-content input:valid ~ label {
+    top: 75%;
+}
+
+.input-content input{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background: transparent;
     border: none;
-    width: 50%;
-    height: 4rem;
-    border-radius: 4rem;
-    background: var(--color-primary);
+    outline: none;
+    font-size: 1em;
+    /* padding: 0 3rem 0 0;  */
+}
+
+
+.input-content .icon {
+    position: absolute;
+    right: 2.5%;
+    line-height: 8.5rem;
+    font-size: 1.3em;
+}
+
+
+#password-eye {
+    border: none;
+    background: transparent;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.remember-forgot {
+    padding: 1rem 0 1rem 0;
+    font-size: .9em;
+    color: black;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: var(--color-terciary);
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: var(--color-terciary);
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn-remember{
+    background: var(--color-terciary);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.submit-button-login {
+    width: 100%;
+    height: 12%;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.not-registred {
+    text-align: center;
+    padding: 1rem;
+}
+
+.not-registred a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
     cursor: pointer;
 }
 
 /* Modal User */
 /* Tela do Usúario */
+
+#modal-registred {
+    display: none;
+}
 
 #modal-user {
     display: none;
