@@ -4,20 +4,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    min-height: 100vh;
-    background-color: pink;
-=======
-    /* min-height: 100vh; */
+    min-height: 15vh;
+    background-color: pink; 
     height: 150%;
->>>>>>> 3c94b3154cef183f40aa44656135aec1b9d765f7
+    padding: 20px;
+
 }
 
 #dishes {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 0.8px;
     margin-top: 32px;
 }
 
@@ -39,7 +37,7 @@
 .image{
     max-width: 200px;
     max-height: 200px;
-    /* filter:drop-shadow(1rem 1rem 1rem black)  */
+    filter:drop-shadow(1rem 1rem 1rem black)
     /* Coloca uma sombra diretamente envolta da imagem se quiser usar Assinado: Lucas W */
 }
 
