@@ -1,43 +1,24 @@
-// Front End - Animações
+// EventListener's Front
 
 document.addEventListener("mousemove", function (event) {
-    // Obtém as coordenadas do cursor em relação ao topo da página
-    var mouseY = event.clientY;
+    let mouseY = event.clientY;
+    let header = document.querySelector('.main-header');
 
-    // Verifica se o cursor se moveu para baixo
-    if (mouseY > (window.innerHeight - 4)) {
+    if (mouseY > (window.innerHeight - 500)) {
+        // Se o cursor estiver abaixo de (altura da janela - 500)
         console.log("O cursor se moveu para baixo.");
-        // Faça algo aqui quando o cursor se mover para baixo
+
+        // Adiciona a classe 'sticky'
+        header.classList.add('sticky');
+    } else {
+        // Se o cursor estiver acima de (altura da janela - 500)
+        // Remove a classe 'sticky'
+        header.classList.remove('sticky');
     }
 });
 
-function abrirModal() {
-    let modal = document.getElementById('modal-login')
-    modal.classList.add('active')
-    modal.classList.remove('notactive')
-}
 
-function fecharModal() {
-    let modal = document.getElementById('container-modal')
-    modal.classList.remove('active')
-    modal.classList.add('notactive')
-}
-
-document.getElementById('exit-modal').addEventListener("click", () => {
-    fecharModal();
-});
-
-// Adicionando ouvinte de evento ao botão user-acess
-document.getElementById('user-acess').addEventListener("click", () => {
-    abrirModal();
-});
-
-// Back End - Acesso e Avaliações
-
-let number;
-let idData = [];
-let connected = false;
-number = localStorage.getItem('numberCounting');
+// EventListener's Back
 
 window.addEventListener("beforeunload", function (event) {
     if (event.target === window) {
@@ -58,6 +39,43 @@ document.addEventListener("submit", function (event) {
         registred();
     }
 });
+
+
+document.getElementById('user-access').addEventListener("click", () => {
+    abrirModal();
+});
+
+document.getElementById('exit-modal').addEventListener("click", () => {
+    fecharModal();
+});
+
+document.getElementsByClassName('container-modal').addEventListener("click", () => {
+    fecharModal();
+});
+
+
+// Variáveis Function
+
+let number;
+let idData = [];
+let connected = false;
+number = localStorage.getItem('numberCounting');
+
+// Functions Front
+
+function abrirModal() {
+    let modal = document.getElementById('modal-login')
+    modal.classList.add('active')
+    modal.classList.remove('notactive')
+}
+
+function fecharModal() {
+    let modal = document.getElementById('modal - login')
+    modal.classList.remove('active')
+    modal.classList.add('notactive')
+}
+
+// Functions Back
 
 function registred(idData, connected) {
     let nameUser = document.getElementById('user-name').value;
@@ -162,81 +180,3 @@ function dataBase() {
 
     tableHTML.innerHTML += `</table>`;
 }
-
-// FIM DO CÓDIGO, ANOTAÇÕES ABAIXO
-
-// function registred() {
-
-// let id;
-// let nameUser = document.getElementById('user-name').textContent;
-// let emailUser = document.getElementById('user-email').textContent;
-// let passwordUser = document.getElementById('user-password').textContent;
-
-//   if (nameUser == null && emailUser == null && passwordUser == null) {
-//      alert('Campos não digitados!');
-
-//} //else {
-// alert('Entrei')
-
-//     let number = localStorage.getItem('userCounting', number);
-//     let idData = [];
-
-//     number++;
-//     alert('ConteiEntrei')
-// }
-// localStorage.setItem('userCounting', number);
-
-// let idName = `${id}/registration/name`;
-// let idEmail = `${id}/registration/email`;
-// let idPassword = `${id}/registration/password`;
-
-// localStorage.setItem(idName, nameUser);
-// localStorage.setItem(idEmail, emailUser);
-// localStorage.setItem(idPassword, passwordUser);
-
-// for (let i = 0; i < idData.length; i++) {
-//     console.log(idData[i]);
-//     console.log(localStorage.getItem('userCounting'));
-//     return idData;
-// }
-
-
-// User Profile
-// Perfil do Usuário
-// function profileDisplay(userConnect) {
-//     let profileButton = document.getElementsById('user-access');
-//     profileDisplay();
-//     profileButton.onclick = function () {
-//         if (userConnect) {
-//             alert('Test True');
-//             window.location.href = 'profile.html';
-//         } else {
-//             alert('Test False');
-//             loginscreen.showModal();
-//         }
-//     }
-// }
-
-// Database Display
-// Exibição do Banco de Dados
-// function dataBaseInfo(idData) {
-//     let container = document.getElementById('containerTable');
-//     let tableHTML = `<table class="table-dataBase">
-//                         <h1 class="title-dataBase">Dados dos Usuários</h1>
-//                         <tr>
-//                             <th>ID</th>
-//                             <th>Nome de Usuário</th>
-//                             <th>Email</th>
-//                         </tr>`;
-
-//     for (let i = 0; i < idData.length; i++) {
-//         let id = idData[i];
-//         tableHTML += `<tr>
-//         <td>${localStorage.getItem(id)}</td>
-//         <td>${localStorage.getItem(id + '/registration/name')}</td>
-//         <td>${localStorage.getItem(id + '/registration/email')}</td>
-//     </tr>`;
-
-//     tableHTML += `</table/>`;
-//     container.innerHTML = tableHTML;
-// 

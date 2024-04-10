@@ -78,33 +78,33 @@
     height: 100%;
     overflow: hidden;
     gap: 10px;
+    position: relative;
 }
 
-.confetti-container {
-    display: flex; /* Usando flexbox */
-    height: 100%;
-    width: 100%;
-    gap: 0.2rem; /* Espaçamento entre os confetes */
-    justify-content: space-between; /* Distribui os confetes igualmente */
-    align-items: center; /* Centraliza os confetes verticalmente */
-    position: relative; /* Adicionando position relative */
+/* .cacau-details {
+    position: absolute;
+    background-color: #ffff;
+    width: 15rem;
+    height: 15rem;
+    clip-path: ellipse(2% 36% at 50% 50%);
 }
 
-.confetti {
-    width: calc(10% - (var(--confetti-count) - 1)); /* Calculando a largura dos confetes */
-    height: auto; /* Mantém a altura original */
-    border-radius: 50%; 
-    background-color: red;
-    animation: rain-confetti 4s linear infinite;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona um box-shadow */
-    margin: 0; /* Removendo a margem */
+.cd1 {
+    top: 2rem;
+    left: 10rem;
 }
 
-@keyframes rain-confetti {
-    0% {
-        transform: translateY(-100%) rotate(1deg);
-    }
-    100% {
-        transform: translateY(100vh) rotate(-1deg);
-    }
+.cd2 {
+    top: 50%;
+    left: 20%;
 }
+
+.cd3 {
+    top: 50%;
+    left: 20%;
+}
+
+.cd4 {
+    top: 50%;
+    left: 20%;
+} */
