@@ -26,9 +26,16 @@
     top: 0;
     left: 0;
     z-index: 999;
-    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container-modal.active {
+    display: flex;
+}
+
+.container-modal.notactive {
+    display: none;
 }
 
 /* Modal Login */
@@ -43,11 +50,33 @@
     border-radius: 2rem;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 4rem rgba(0, 0, 0, .5);
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: var(--medium-padding);
+    overflow: hidden;
+}
+
+#exit-modal{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: var(--color-quaternary);
+    border-bottom-left-radius: 2rem;
+    cursor: pointer;
+}
+
+#exit-modal:hover i{
+    transition: all 1s ease-in-out;
+    transform: scale(1.2);
 }
 
 .form-content {
@@ -90,13 +119,13 @@
 .input-content input{
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 2.2rem);
     height: 35%;
     background: transparent;
     border: none;
     outline: none;
     font-size: 1em;
-    /* padding: 0 3rem 0 0;  */
+    z-index: 500; 
 }
 
 
@@ -113,6 +142,7 @@
     background: transparent;
     font-size: 100%;
     cursor: pointer;
+    z-index: 1000;
 }
 
 .remember-forgot {
@@ -151,7 +181,7 @@
 .submit-button-login {
     width: 100%;
     height: 12%;
-    background: #162938;
+    background: var(--color-quaternary);
     border: none;
     outline: none;
     border-radius: 6px;
@@ -171,6 +201,10 @@
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
+}
+
+.not-registred a:hover{
+    text-decoration: underline;
 }
 
 /* Modal User */
