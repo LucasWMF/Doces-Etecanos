@@ -10,9 +10,9 @@
 }
 
 .sticky {
-    /* box-shadow: 0px 8px 10px var(--color-shadow-primary); */
     background: transparent;
-    backdrop-filter: blur(2rem);
+    box-shadow: 0 1rem 2rem var(--dark-color);
+    backdrop-filter: blur(1rem);
 }
 
 .group-items {
@@ -49,12 +49,12 @@
     border: none;
 }
 
-.user-profile i{
+.user-profile i {
     color: var(--color-primary);
     font-size: 1.5rem;
 }
 
-.user-profile button:hover > i:hover{
+.user-profile button:hover>i:hover {
     color: var(--color-shadow-primary);
 }
 
@@ -101,9 +101,118 @@
     border-bottom: 3px solid var(--color-quintenary);
 }
 
-/* Mobile Menu */
-/* Menu para Celular */
-
 #mobile_menu {
     display: none;
+}
+
+/* Estilos para telas pequenas (celulares) */
+@media only screen and (max-width: 600px) {
+    #navbar ul{
+        display: none;
+    }
+
+    .nav-icon {
+        font-size: 1em;
+    }
+
+    .store-name {
+        font-size:1em;
+    }
+
+    .main-header {
+        padding: calc(var(--small-padding) / 1);
+    }
+
+    .group-items {
+        gap: 2rem;
+    }
+
+    .contact-button {
+        padding: var(--extra-small-padding);
+    }
+
+    .user-profile {
+        padding: var(--extra-small-padding);
+    }
+
+    .user-profile i {
+        font-size: 1.2rem;
+    }
+
+    /* Mobile Menu */
+    /* Menu para Celular */
+
+    /* Adiciona o ícone de hamburguer para o menu móvel */
+    #mobile_menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    #mobile_menu button {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Estiliza o ícone de hamburguer */
+    #mobile_menu button .hamburger-icon {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Adiciona a animação para o ícone de hamburguer */
+    #mobile_menu button .hamburger-icon::before,
+    #mobile_menu button .hamburger-icon::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Posiciona as linhas do ícone de hamburguer */
+    #mobile_menu button .hamburger-icon::before {
+        top: -10px;
+    }
+
+    #mobile_menu button .hamburger-icon::after {
+        top: 10px;
+    }
+
+    /* Animação para transformar o ícone de hamburguer em X */
+    #mobile_menu.mobileon button .hamburger-icon {
+        background-color: transparent;
+    }
+
+    #mobile_menu.mobileon button .hamburger-icon::before {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    #mobile_menu.mobileon button .hamburger-icon::after {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
+/* Estilos para telas médias (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .main-header {
+        padding: var(--medium-padding) 8%;
+    }
+}
+
+/* Estilos para telas grandes (desktops) */
+@media only screen and (min-width: 1025px) {
+    .main-header {
+        padding: var(--large-padding) 8%;
+    }
 }

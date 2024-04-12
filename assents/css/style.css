@@ -4,7 +4,7 @@
 @import url('about.css');
 @import url('menu.css');
 @import url('menukids.css');
-@import url('testimonials.css');
+@import url('reviews.css');
 @import url('footer.css');
 @import url('modal.css');
 
@@ -48,9 +48,6 @@
     --medium-text: 24px;
     --large-text: 48px;
 
-    --confetti-count: 10;
-    /* Número de confetes */
-
 }
 
 * {
@@ -67,15 +64,6 @@ body {
     font-family: 'Arial', sans-serif;
     color: var(--dark-color);
     background: white;
-    /* height: 700vh; */
-}
-
-::-webkit-scrollbar {
-    width: 1rem;
-    padding: .5rem;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #ADD9D1;
-    border-radius: 10rem;
+    width: 100vw;
+    height: 100%;
 }
